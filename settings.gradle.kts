@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "Pokedex"
 include(":androidApp")
 include(":shared")
+
+//include("spotless")

@@ -26,7 +26,7 @@ kotlin {
             baseName = "shared"
         }
     }
-    
+
     sourceSets {
         val commonMain by getting {
             dependencies {
