@@ -2,7 +2,7 @@
 activityCompose = "1.7.1"
 agp = "8.2.0-alpha01"
 composeBom = "2023.05.00"
-gradle = "8.2.0-alpha02"
+gradle = "8.0.2"
 kotlin = "1.8.0"
 core-ktx = "1.10.0"
 junit = "4.13.2"
