@@ -1,11 +1,26 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.compose)
+}
+
+kotlin {
+    sourceSets {
+        android()
+        val androidMain by getting {
+            dependencies {
+                implementation(project(":shared"))
+            }
+        }
+    }
 }
 
 android {
     namespace = "com.jiaoay.pokedex.android"
     compileSdk = 33
+
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+
     defaultConfig {
         applicationId = "com.jiaoay.pokedex.android"
         minSdk = 21
@@ -13,34 +28,31 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.4"
-    }
-    packagingOptions {
+
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        jvmToolchain(11)
     }
 }
 
 dependencies {
     implementation(project(":shared"))
 
+    implementation(platform(libs.kotlin.bom))
     implementation(platform(libs.androidx.compose.bom))
 
     implementation("androidx.compose.ui:ui")
