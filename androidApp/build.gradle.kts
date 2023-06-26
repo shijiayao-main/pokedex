@@ -16,13 +16,13 @@ kotlin {
 }
 
 android {
-    namespace = "com.jiaoay.pokedex.android"
+    namespace = "com.jiaoay.pokedex"
     compileSdk = 33
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "com.jiaoay.pokedex.android"
+        applicationId = "com.jiaoay.pokedex"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
