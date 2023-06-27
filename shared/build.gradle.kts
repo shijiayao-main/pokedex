@@ -74,6 +74,8 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.common)
+                implementation(libs.kotlinx.coroutines.core.jvm)
+                implementation(libs.ktor.client.cio)
             }
         }
     }
