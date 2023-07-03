@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.compose)
 }
@@ -61,4 +62,6 @@ dependencies {
     implementation("androidx.compose.foundation:foundation")
     implementation("androidx.compose.material3:material3")
     implementation(libs.androidx.activity.compose)
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
 }
