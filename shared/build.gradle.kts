@@ -9,7 +9,7 @@ plugins {
 kotlin {
     android()
 
-    jvm("desktop")
+//    jvm("desktop")
 
     iosX64()
     iosArm64()
@@ -72,13 +72,13 @@ kotlin {
         val iosArm64Test by getting
         val iosSimulatorArm64Test by getting
 
-        val desktopMain by getting {
-            dependencies {
-                implementation(compose.desktop.common)
-                implementation(libs.kotlinx.coroutines.core.jvm)
-                implementation(libs.ktor.client.cio)
-            }
-        }
+//        val desktopMain by getting {
+//            dependencies {
+//                implementation(compose.desktop.common)
+//                implementation(libs.kotlinx.coroutines.core.jvm)
+//                implementation(libs.ktor.client.cio)
+//            }
+//        }
     }
 }
 

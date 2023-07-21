@@ -1,7 +1,7 @@
 rootProject.name = "Pokedex"
 include(":androidApp")
 include(":shared")
-include(":desktopApp")
+//include(":desktopApp")
 
 pluginManagement {
     repositories {
