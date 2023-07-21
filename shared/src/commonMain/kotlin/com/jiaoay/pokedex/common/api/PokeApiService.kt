@@ -8,6 +8,5 @@ interface PokeApiService {
 
     suspend fun getApiResource(): JsonObject
 
-    suspend fun getNamedResourceList(endpoint: String): NamedAPIResourceList
-    suspend fun getNamedResourceListByUrl(url: Url): NamedAPIResourceList
+    suspend fun getNamedResourceListByUrl(urlString: String): NamedAPIResourceList
 }

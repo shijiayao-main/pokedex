@@ -13,7 +13,6 @@ import kotlinx.serialization.json.JsonObject
 class PokeApi : PokeApiService {
     private val httpClient = PokeHttpEngine.httpClient
 
-    private val scheme = "http"
     private val host = "pokeapi.co"
 
     private val baseUrlString: String by lazy {
@@ -30,16 +29,9 @@ class PokeApi : PokeApiService {
             .body()
     }
 
-    override suspend fun getNamedResourceList(endpoint: String): NamedAPIResourceList {
-
-        val urlString = "$baseUrlString/$endpoint"
-
-        return getNamedResourceListByUrl(url = Url(urlString))
-    }
-
-    override suspend fun getNamedResourceListByUrl(url: Url): NamedAPIResourceList {
+    override suspend fun getNamedResourceListByUrl(urlString: String): NamedAPIResourceList {
         return httpClient
-            .get(url.toString())
+            .get(urlString)
             .body()
     }
 }

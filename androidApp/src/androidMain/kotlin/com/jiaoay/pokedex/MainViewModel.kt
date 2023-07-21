@@ -5,8 +5,7 @@ import kotlinx.serialization.json.JsonPrimitive
 
 class MainViewModel: ViewModel() {
 
-    private val repository = PokeApiRepository()
-
+    private val repository = PokeApiRepository.instance
 
     suspend fun getApiResource(): Map<String, String> {
         val resourceJson = repository.getApiResource()
